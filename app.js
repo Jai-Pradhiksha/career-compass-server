@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const PORT = 3500
 const roadmapRouter = require('./router/roadmapRouter')
+const userRouter = require('./router/signupRouter')
 
 const mongoose = require('mongoose')
 
@@ -21,5 +22,6 @@ app.get('/api/v1', (request, response) => {
 })
 
 app.use('/api/v1',roadmapRouter)
+app.use('/api/v1/user', userRouter)
 
 // app.listen(PORT, () => console.log(`Server is running at http://localhost:${PORT}/api/v1`))
